@@ -21,8 +21,8 @@ export const data = {
 
     // Datos de la sucursal fisica //
 
-    Nombre_del_comercio_fisico:'Supermercado Diefer 20',
-    Correo_del_comercio_fisico: 'Diefer20@gmail.com',
+    Nombre_del_comercio_fisico:'Supermercado Diefer 21',
+    Correo_del_comercio_fisico: 'Diefer21@gmail.com',
     Celular_del_comercio_fisico: '984388144',
     Direccion_del_comercio_fisico: 'Toba casi Moroti',
     Numero_del_comercio_fisico: '1212',
