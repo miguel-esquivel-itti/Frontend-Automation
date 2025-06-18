@@ -23,7 +23,9 @@ test('Pedido exitoso pos sin impresora', async ({ page }) => {
 
   await page.getByRole('link', { name: 'Icon of Mis Productos Mis' }).click();
   await page.getByRole('link', { name: 'Añadir nuevos productos' }).click();
+  //await page.getByRole('button', { name: 'Añadir' }).nth(1).click();
   await page.getByRole('button', { name: 'Añadir' }).nth(1).click();
+  await page.waitForTimeout(3000); // Espera 2000 milisegundos (2 segundos)
   await page.getByText(data.Nombre_del_comercio_fisico).click();
   await page.getByRole('button', { name: '+' }).first().click();
   await page.getByRole('button', { name: 'Añadir producto' }).click();

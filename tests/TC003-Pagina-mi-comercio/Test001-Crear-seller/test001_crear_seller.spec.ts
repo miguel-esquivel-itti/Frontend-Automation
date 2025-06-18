@@ -32,7 +32,7 @@ test('Crear seller', async ({ page }) => {
   await page.getByPlaceholder('Correo electrónico').click();
   await page.getByPlaceholder('Correo electrónico').fill(data.Correo_del_comercio_fisico);
   await page.getByPlaceholder('Escribe tu número de teléfono').click();
-  await page.getByPlaceholder('Escribe tu número de teléfono').fill('984388147');
+  await page.getByPlaceholder('Escribe tu número de teléfono').fill(data.Celular_del_comercio_fisico);
   await page.locator('div').filter({ hasText: /^Para desplazarte, pulsa las teclas de flecha\.$/ }).nth(1).click();
   await page.getByPlaceholder('Dirección', { exact: true }).click();
   await page.waitForTimeout(1000); 
@@ -43,9 +43,11 @@ test('Crear seller', async ({ page }) => {
   await page.getByPlaceholder('Número', { exact: true }).fill('555');
   await page.getByText('Selecciona una opción').click();
   await page.getByText('619189122').click();
+  await page.waitForTimeout(1000); 
   await page.getByRole('button', { name: 'Añadir comercio' }).click();
-
   await page.getByText('Sucursal añadida con éxito.', { exact: true }).waitFor({ state: 'visible' });
+  //await page.waitForTimeout(1000); 
+
 
   // Definir la ruta donde se guardarán las capturas
   const carpetaBase = path.join(__dirname, '..','..', 'screenshots', 'Pagina mi comercio','creacion de seller');  // Usamos __dirname para referirnos a la ubicación actual del test

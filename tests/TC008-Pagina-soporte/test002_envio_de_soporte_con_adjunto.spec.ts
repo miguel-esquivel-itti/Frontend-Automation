@@ -18,11 +18,10 @@ test('Envío de soporte con adjunto', async ({ page }) => {
 
   // Navegación a la sección de soporte
   await page.getByRole('button').nth(2).click();
-  await page.getByRole('link', { name: 'Icon of Soporte Soporte' }).click();
 
-  // Enviar mensaje
-  const mensaje = 'Mensaje generado automáticamente por el equipo de QA para fines de prueba.';
-  await page.getByPlaceholder('Escribinos tu mensaje aquí').fill(mensaje);
+  await page.getByRole('link', { name: 'Icon of Soporte Soporte' }).click();
+  await page.getByPlaceholder('Escribinos tu mensaje aquí').click();
+  await page.getByPlaceholder('Escribinos tu mensaje aquí').fill('Mensaje generado automáticamente por el equipo de QA para fines de prueba.');
 
   const filePath = path.resolve(__dirname, '../img/pruebaSoporte.png');
   await page.locator('input[type="file"]').setInputFiles(filePath);

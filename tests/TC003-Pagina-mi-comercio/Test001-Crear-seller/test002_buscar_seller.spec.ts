@@ -30,7 +30,11 @@ test('Buscar seller', async ({ page }) => {
   await page.locator("//div[@class='relative flex-1 rounded-full bg-grey-scale-light-grey']").hover();
   await page.mouse.wheel(0, 200); // Desplaza 500 píxeles hacia abajo
 
-  await page.waitForTimeout(2000); 
+  await page.waitForTimeout(9000); 
+
+  await page.reload();  // vamos a sacar cuando salga las alertas
+  await page.getByRole('button').nth(2).click();
+
 
   // Verificar si el texto está visible
   // Hacer clic en el elemento con el texto del comercio
